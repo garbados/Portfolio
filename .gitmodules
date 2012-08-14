@@ -1,0 +1,9 @@
+[submodule "pages/games"]
+	path = pages/games
+	url = git://github.com/garbados/games.git
+[submodule "pages/stories"]
+	path = pages/stories
+	url = git://github.com/garbados/stories.git
+[submodule "static/bootstrap"]
+	path = static/bootstrap
+	url = git://github.com/twitter/bootstrap.git

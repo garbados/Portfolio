@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Portfolio of Max Thayer">
+	    <meta name="viewport" content="width=device-width">
+
+	    <title>{% block title %}Max Thayer{% endblock %}</title>
+
+	    {% assets "style_css" %}
+	    	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+	    {% endassets %}
+	</head>
+	<body>
+	    {# Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+	         chromium.org/developers/how-tos/chrome-frame-getting-started #}
+	    <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+		
+	    <section id="color_bar"></section>
+	    <div class="container">
+	    	<aside class="span2">
+	    		<a href="/"><img src="{{ url_for('static', filename='img/me.jpg') }}"></a>
+				<ul id="nav" class="nav nav-tabs nav-stacked">
+					<li><a id="stories" href="/stories">Stories</a></li>
+					<li><a id="games" href="/games">Games</a></li>
+					<li><a id="twitter" href="https://twitter.com/garbados">@garbados</a>
+					<li><a id="linkedin" href="http://www.linkedin.com/in/maxthayer">LinkedIn</a>
+					<li><a id="blog" href="http://garbados.tumblr.com/">Blog</a></li>
+					<li><a id="github" href="http://github.com/garbados/">Github</a></li>
+					<li><a id="about" href="http://about.me/maxthayer">about.me</a></li>
+				</ul>
+	    	</aside>
+			<section id="content" class="span6">
+				<h1>Max Thayer</h1>
+				{% if summary %}
+	                <h2>{{ summary.title }}</h2>
+            		<section>
+            			{{ summary }}
+            		</section>
+	            {% endif %}
+
+				{# list view #}
+				{% if stories or games %}
+	                {% if stories %}
+	                    {% set pages = stories %}
+	                    <h2>Stories</h2>
+	                {% else %}
+	                    {% set pages = games %}
+	                    <h2>Games</h2>
+	                {% endif %}
+	                {% for page in pages %}
+	                    <ul id="pages">
+	                        <li>
+	                            <section class="page">
+	                                <h2><a href="{{ page.path }}">{{ page.title }}</a></h2>
+	                                <p><em>{{ page.tags }}</em></p>
+	                                <p>{{ page.date }}</p>
+	                                <p>{{ page.summary }}</p>
+	                            </section>
+	                        </li>
+	                    </ul>
+	                {% endfor %}
+	            {% endif %}
+
+	            {# page view #}
+	            {% if page %}
+					<section class="page">
+                        <h2><a href="{{ page.path }}">{{ page.title }}</a></h2>
+                        <p>{{ page }}</p>
+                    </section>
+	            {% endif %}
+
+			</section>
+		</div>
+
+	    {% assets "post_content_js" %}
+		    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+		{% endassets %}
+	</body>
+</html>
