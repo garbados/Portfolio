@@ -14,7 +14,6 @@ assets = Environment(app)
 
 post_content = Bundle(
     'jquery.js',
-    'mustache.js',
     # Bundle(
     #     'custom.coffee',
     #     filters='coffeescript'),
