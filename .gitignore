@@ -1,0 +1,4 @@
+venv
+*.pyc
+static/packed/
+static/.webassets-cache/
