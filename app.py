@@ -14,15 +14,10 @@ assets = Environment(app)
 
 post_content = Bundle(
     'jquery.js',
-    # Bundle(
-    #     'custom.coffee',
-    #     filters='coffeescript'),
     filters='jsmin',
     output='packed/post_content.js')
 
 style = Bundle(
-    # 'reset.css',
-    # 'tumblr.css',
     Bundle(
         'bootstrap/less/bootstrap.less',
         'custom.less',
