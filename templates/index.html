@@ -8,9 +8,7 @@
 
 	    <title>{% block title %}Max Thayer{% endblock %}</title>
 
-	    {% assets "style_css" %}
-	    	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
-	    {% endassets %}
+	    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	</head>
 	<body>
 	    {# Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -77,9 +75,5 @@
 
 			</section>
 		</div>
-
-	    {% assets "post_content_js" %}
-		    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-		{% endassets %}
 	</body>
 </html>

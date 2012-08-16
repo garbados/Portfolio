@@ -17,16 +17,7 @@ post_content = Bundle(
     filters='jsmin',
     output='packed/post_content.js')
 
-style = Bundle(
-    Bundle(
-        'bootstrap/less/bootstrap.less',
-        'custom.less',
-        filters='less'),
-    output='packed/style.css',
-    debug=False)
-
 assets.register('post_content_js', post_content)
-assets.register('style_css', style)
 
 ## PAGES ##
 pages = FlatPages(app)
