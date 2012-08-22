@@ -1,6 +1,6 @@
 [submodule "pages/games"]
 	path = pages/games
-	url = git@github.com:garbados/games.git
+	url = https://github.com/garbados/games.git
 [submodule "pages/stories"]
 	path = pages/stories
-	url = git@github.com:garbados/stories.git
+	url = https://github.com/garbados/stories.git
