@@ -1,4 +1,12 @@
 Flask==0.9
 Flask-Assets==0.7
 Flask-FlatPages==0.3
+Jinja2==2.6
+Markdown==2.2.0
+PyYAML==3.10
+Werkzeug==0.8.3
+argparse==1.2.1
+distribute==0.6.24
 jsmin==2.0.2
+webassets==0.7
+wsgiref==0.1.2
