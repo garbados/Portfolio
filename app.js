@@ -8,7 +8,7 @@ var express = require('express')
   , path = require('path')
   , fs = require('fs')
   , file = require('file')
-  , YAML = require('libyaml')
+  , YAML = require('js-yaml')
   , Markdown = require('markdown').markdown
   , app = express();
 
@@ -16,14 +16,12 @@ var express = require('express')
 
 // MIDDLEWARE
 
+// gets text from localization files
 var localeMiddleware = function (req, res, next) {
-  // gets text from localization files
-  var locale = req.query.lang || "en";
-  YAML.readFile("./locales/"+locale+".yml", function(error, documents) {
-    if (error) {console.error(error);}
-    res.locals.i18n = documents[0];
-    next();
-  });
+  var locale = req.query.lang || "en"
+    , i18n = require("./locales/"+locale+".yml");
+  res.locals.i18n = i18n;
+  next();
 };
 
 var parsePages = {
@@ -34,7 +32,7 @@ var parsePages = {
   parse: function(string) {
     var split = '\n\n'
       , i = string.indexOf(split)
-      , result = YAML.parse(string.substr(0,i))[0];
+      , result = YAML.load(string.substr(0,i));
     result.content = Markdown.toHTML(string.substr(i));
     return result;
   },
