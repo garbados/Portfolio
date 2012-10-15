@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "maxthayer-portfolio",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,5 +13,17 @@
     "less": "1.3.x",
     "libyaml": "0.1.x",
     "markdown": "0.4.x"
+  },
+  "description": "Portfolio of Max Thayer",
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Max Thayer",
+  "license": "MIT",
+  "engines" : {
+    "node": "0.8.x",
+    "npm": "1.1.x"
   }
 }
