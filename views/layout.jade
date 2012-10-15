@@ -1,0 +1,14 @@
+doctype 5
+html
+  head
+    title Max Thayer
+    block style
+      - css.root = "stylesheets";
+      != css("bootstrap.min.css")
+      != css("style.css")
+    block preload
+  body
+    block content
+    block templates
+    block scripts
+      - js.root = "javascripts";

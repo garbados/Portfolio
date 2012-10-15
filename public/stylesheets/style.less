@@ -1,0 +1,128 @@
+@import "tooltips.less";
+
+/* VARIABLES */
+@fontcolor: #555;
+@hovercolor: #333;
+@docwidth: 1000px;
+
+/* ALL */
+.animate(@delay: 0.3s) {
+	box-sizing: border-box;
+	-webkit-transition: all @delay ease-in-out;
+	-moz-transition: all @delay ease-in-out;
+	-o-transition: all @delay ease-in-out;
+	-ms-transition: all @delay ease-in-out;
+	transition: all @delay ease-in-out;
+}
+html {
+	background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/cream_dust.png) repeat #fff;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+	background: #4EA3D0;
+	color: white;
+	position: fixed;
+	width: 100%;
+	#header {
+		@width: @docwidth;
+		width: @width;
+		margin: auto;
+		a, h1, p {
+			color: white;
+		}
+		img {
+			margin-left: 10px;
+			height: 60px;
+			float: right;
+		}
+		h1 {
+			display: inline;
+			float: right;
+		}
+		p {
+			font-size: 20px;
+			display: inline;
+			em {
+				line-height: 300%;
+			}
+		}
+	}
+}
+
+/* MAIN */
+#main, #detail {
+	clear: both;
+	width: @docwidth;
+	margin: auto;
+	padding-top: 55px;
+}
+
+/* COLUMNS */
+.column(@color: #666, @textcolor: @hovercolor) {
+	* {
+		.animate;
+		text-align: center;
+	}
+	display:inline;
+	float: left;
+	width: (@docwidth / 4) - 7px;
+	margin-right: 7px;
+	h2 {
+		padding-left: 13px;
+	}
+	h2 {
+		border-bottom: 20px solid @color;
+		color: @textcolor;
+	}
+	ul {
+		margin: 0px;
+		li {
+			list-style-type: none;
+			padding: 7px;
+			margin: 3px;
+			a {
+				display: block;
+				text-decoration: none;
+				color: @fontcolor;
+			}
+		}
+		li:hover {
+			background-color: @color;
+			a {
+				color: @textcolor;
+			}
+		}
+	}
+}
+
+.projects {
+	.column(#FFE863);
+}
+.stories {
+	.column(#9E73FF);
+}
+.games {
+	.column(#FF7563);
+}
+.etc {
+	.column(#63FF8C);
+}
+
+#detail {
+	p, h1, h2, h3, h4, h5 {
+		margin-bottom: 10px;
+	}
+	#back, h1 {
+		text-align: center;
+	}
+	ol, ul {
+		margin-left: 20px;
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}

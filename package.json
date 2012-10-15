@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.0rc4",
+    "jade": "*",
+    "connect-assets": "2.3.x",
+    "file": "0.2.x",
+    "less": "1.3.x",
+    "libyaml": "0.1.x",
+    "markdown": "0.4.x"
+  }
+}

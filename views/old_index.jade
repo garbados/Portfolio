@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  header#header
+    h1 
+      a(href="#/") Max Thayer
+  nav#nav
+    ul
+      li 
+        a(href="#/projects") Projects
+      li 
+        a(href="#/games") Games
+      li 
+        a(href="#/stories") Stories
+      li 
+        a(href="#/about") About
+      li 
+        a(href="#") Random
+  #main
+  #detail
+
+block templates
+  script#default(type="text/template")
+    h1 Default
+
+  script#project(type="text/template")
+    h1 Projects
+
+  script#game(type="text/template")
+    h1 Games
+
+  script#story(type="text/template")
+    h1 Stories
+      
+  script#about(type="text/template")
+    h1 About
+
+  script#page(type="text/template")
+    h1 Page
+
+  script#notfound(type="text/template")
+    h1 Not Found
+
+append scripts
+  script(src="/javascripts/vendor/jquery.js")
+  // script(src="/javascripts/vendor/sammy.js")
+  script(src="/javascripts/vendor/lodash.js")
+  script(src="/javascripts/vendor/backbone.js")
+  script(src="/javascripts/script.js")

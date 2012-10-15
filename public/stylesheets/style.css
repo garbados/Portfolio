@@ -1,0 +1,305 @@
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.tooltip.top {
+  margin-top: -3px;
+}
+.tooltip.right {
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  margin-top: 3px;
+}
+.tooltip.left {
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+/* VARIABLES */
+/* ALL */
+html {
+  background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/cream_dust.png) repeat #ffffff;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+/* HEADER */
+header {
+  background: #4EA3D0;
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+header #header {
+  width: 1000px;
+  margin: auto;
+}
+header #header a,
+header #header h1,
+header #header p {
+  color: white;
+}
+header #header img {
+  margin-left: 10px;
+  height: 60px;
+  float: right;
+}
+header #header h1 {
+  display: inline;
+  float: right;
+}
+header #header p {
+  font-size: 20px;
+  display: inline;
+}
+header #header p em {
+  line-height: 300%;
+}
+/* MAIN */
+#main,
+#detail {
+  clear: both;
+  width: 1000px;
+  margin: auto;
+  padding-top: 55px;
+}
+/* COLUMNS */
+.projects {
+  display: inline;
+  float: left;
+  width: 243px;
+  margin-right: 7px;
+}
+.projects * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.projects h2 {
+  padding-left: 13px;
+}
+.projects h2 {
+  border-bottom: 20px solid #ffe863;
+  color: #333333;
+}
+.projects ul {
+  margin: 0px;
+}
+.projects ul li {
+  list-style-type: none;
+  padding: 7px;
+  margin: 3px;
+}
+.projects ul li a {
+  display: block;
+  text-decoration: none;
+  color: #555555;
+}
+.projects ul li:hover {
+  background-color: #ffe863;
+}
+.projects ul li:hover a {
+  color: #333333;
+}
+.stories {
+  display: inline;
+  float: left;
+  width: 243px;
+  margin-right: 7px;
+}
+.stories * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.stories h2 {
+  padding-left: 13px;
+}
+.stories h2 {
+  border-bottom: 20px solid #9e73ff;
+  color: #333333;
+}
+.stories ul {
+  margin: 0px;
+}
+.stories ul li {
+  list-style-type: none;
+  padding: 7px;
+  margin: 3px;
+}
+.stories ul li a {
+  display: block;
+  text-decoration: none;
+  color: #555555;
+}
+.stories ul li:hover {
+  background-color: #9e73ff;
+}
+.stories ul li:hover a {
+  color: #333333;
+}
+.games {
+  display: inline;
+  float: left;
+  width: 243px;
+  margin-right: 7px;
+}
+.games * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.games h2 {
+  padding-left: 13px;
+}
+.games h2 {
+  border-bottom: 20px solid #ff7563;
+  color: #333333;
+}
+.games ul {
+  margin: 0px;
+}
+.games ul li {
+  list-style-type: none;
+  padding: 7px;
+  margin: 3px;
+}
+.games ul li a {
+  display: block;
+  text-decoration: none;
+  color: #555555;
+}
+.games ul li:hover {
+  background-color: #ff7563;
+}
+.games ul li:hover a {
+  color: #333333;
+}
+.etc {
+  display: inline;
+  float: left;
+  width: 243px;
+  margin-right: 7px;
+}
+.etc * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.etc h2 {
+  padding-left: 13px;
+}
+.etc h2 {
+  border-bottom: 20px solid #63ff8c;
+  color: #333333;
+}
+.etc ul {
+  margin: 0px;
+}
+.etc ul li {
+  list-style-type: none;
+  padding: 7px;
+  margin: 3px;
+}
+.etc ul li a {
+  display: block;
+  text-decoration: none;
+  color: #555555;
+}
+.etc ul li:hover {
+  background-color: #63ff8c;
+}
+.etc ul li:hover a {
+  color: #333333;
+}
+#detail p,
+#detail h1,
+#detail h2,
+#detail h3,
+#detail h4,
+#detail h5 {
+  margin-bottom: 10px;
+}
+#detail #back,
+#detail h1 {
+  text-align: center;
+}
+#detail ol,
+#detail ul {
+  margin-left: 20px;
+}
+#detail ol li,
+#detail ul li {
+  margin-bottom: 10px;
+}

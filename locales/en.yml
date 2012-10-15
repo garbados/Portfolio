@@ -1,0 +1,34 @@
+projects:
+  alleyways:
+    url: "#/pages/games/alleyways.md"
+    title: Alleyways
+    summary: "Solo - Find clues, solve mysteries, make friends."
+  todogame:
+    url: "http://todo-game.herokuapp.com"
+    title: Todogame
+    summary: "Solo - An attempt to gamify getting stuff done."
+  wefunder:
+    url: "https://wefunder.com/"
+    title: Wefunder
+    summary: "Support Intern - Startup investing for everyone."
+  candlepin:
+    url: "http://candlepin.co/"
+    title: Candlepin
+    summary: "Bizdev, developer - A new way to discover, develop and play HTML5 games"
+  bandura:
+    url: "http://www.bandura.co/"
+    title: Bandura
+    summary: "Bizdev, developer - Learn Freely"
+etc:
+  twitter:
+    url: http://twitter.com/garbados
+    title: "Twitter"
+  linkedin:
+    url: http://www.linkedin.com/in/maxthayer
+    title: Linkedin
+  blog:
+    url: http://garbados.tumblr.com/
+    title: Blog
+  github:
+    url: http://github.com/garbados/
+    title: Github
