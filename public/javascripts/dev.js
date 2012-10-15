@@ -85,7 +85,7 @@ defs.ItemView = Backbone.View.extend({
 	initialize: function(options) {
 		this.model = options.model;
 		this.$el.tooltip({
-			placement: 'bottom',
+			// placement: 'bottom',
 			title: this.model.get("summary")
 		});
 	},
