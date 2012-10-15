@@ -1,10 +1,6 @@
 {
   "name": "maxthayer-portfolio",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app"
-  },
   "dependencies": {
     "express": "3.0.0rc4",
     "jade": "*",
@@ -14,14 +10,6 @@
     "js-yaml": "1.0.x",
     "markdown": "0.4.x"
   },
-  "description": "Portfolio of Max Thayer",
-  "main": "app.js",
-  "devDependencies": {},
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "Max Thayer",
-  "license": "MIT",
   "engines" : {
     "node": "0.8.x",
     "npm": "1.1.x"
