@@ -48,7 +48,12 @@ var parsePages = {
               if (err) {
                 console.log(err);
               } else {
-                self.pages[fileName] = self.parse(string);
+                var page_path = fileName.split(path.sep)
+                    temp_pages = self.pages;
+                if (!self.pages[page_path[1]]) {
+                  self.pages[page_path[1]] = {};
+                }
+                self.pages[page_path[1]][page_path[2]] = self.parse(string);
               }
             });
           } else {
@@ -104,21 +109,17 @@ app.configure('development', function(){
 // ROUTES
 
 app.get('/', function(req, res){
-    var result = [],
-        pages = parsePages.pages
+    var pages = parsePages.pages,
         i18n = res.locals.i18n;
     for (var folder in i18n) {
+      pages[folder] = {};
       for (var page in i18n[folder]) {
         var self = i18n[folder][page];
         if (self.content) self.content = Markdown.toHTML(self.content);
-        pages[['pages', folder, page].join(path.sep)] = self;
+        pages[folder][page] = self;
       }
     }
-    for (page in pages) {
-      pages[page].id = page;
-      result.push(pages[page]);
-    }
-    res.render('index', { pages: result });
+    res.render('index', { pages: pages });
 });
 app.get('/api/v1/:folder/:name', parsePages.render_page);
 app.get('/api/v1/pages', parsePages.render_all)

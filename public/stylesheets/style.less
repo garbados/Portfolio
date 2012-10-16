@@ -1,128 +1,106 @@
+@import "bootstrap.less";
 @import "tooltips.less";
+@import "util.less";
 
-/* VARIABLES */
-@fontcolor: #555;
-@hovercolor: #333;
-@docwidth: 1000px;
-
-/* ALL */
-.animate(@delay: 0.3s) {
-	box-sizing: border-box;
-	-webkit-transition: all @delay ease-in-out;
-	-moz-transition: all @delay ease-in-out;
-	-o-transition: all @delay ease-in-out;
-	-ms-transition: all @delay ease-in-out;
-	transition: all @delay ease-in-out;
-}
 html {
-	background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/cream_dust.png) repeat #fff;
+	// background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/wp-content/themes/tweaker6/images/bgnoise.png) repeat #fff;
+	width: 100%;
+	height: 100%;
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	width: 100%;
+	height: 100%;
 }
 
-/* HEADER */
-header {
-	background: #4EA3D0;
-	color: white;
-	position: fixed;
+nav {
+	@color: white;
+	@bg_color: #08C;
+	background-color: @bg_color;
 	width: 100%;
-	#header {
-		@width: @docwidth;
-		width: @width;
+	position: fixed;
+	#nav {
+		width: 940px;
 		margin: auto;
-		a, h1, p {
-			color: white;
-		}
-		img {
-			margin-left: 10px;
-			height: 60px;
-			float: right;
+		padding: 5px 20px;
+		a {
+			color: @color;
 		}
 		h1 {
 			display: inline;
-			float: right;
 		}
-		p {
-			font-size: 20px;
-			display: inline;
-			em {
-				line-height: 300%;
-			}
-		}
-	}
-}
-
-/* MAIN */
-#main, #detail {
-	clear: both;
-	width: @docwidth;
-	margin: auto;
-	padding-top: 55px;
-}
-
-/* COLUMNS */
-.column(@color: #666, @textcolor: @hovercolor) {
-	* {
-		.animate;
-		text-align: center;
-	}
-	display:inline;
-	float: left;
-	width: (@docwidth / 4) - 7px;
-	margin-right: 7px;
-	h2 {
-		padding-left: 13px;
-	}
-	h2 {
-		border-bottom: 20px solid @color;
-		color: @textcolor;
-	}
-	ul {
-		margin: 0px;
-		li {
+		ul {
 			list-style-type: none;
-			padding: 7px;
-			margin: 3px;
-			a {
-				display: block;
-				text-decoration: none;
-				color: @fontcolor;
-			}
-		}
-		li:hover {
-			background-color: @color;
-			a {
-				color: @textcolor;
+			display: inline;
+			li {
+				float: right;
+				line-height: 40px;
+				a {
+					padding: 0 30px;
+					text-transform: uppercase;
+				}
+				a:hover {
+					border-top: 2px dashed @color;
+					border-bottom: 2px dashed @color;
+					text-decoration: none;
+				}
 			}
 		}
 	}
 }
 
-.projects {
-	.column(#FFE863);
-}
-.stories {
-	.column(#9E73FF);
-}
-.games {
-	.column(#FF7563);
-}
-.etc {
-	.column(#63FF8C);
-}
-
-#detail {
-	p, h1, h2, h3, h4, h5 {
-		margin-bottom: 10px;
-	}
-	#back, h1 {
+header {
+	@color: black;
+	@bg_color: white;
+	background-color: @bg_color;
+	width: 100%;
+	padding-top: 60px;
+	#header {
+		width: 940px;
+		margin: auto;
 		text-align: center;
 	}
-	ol, ul {
-		margin-left: 20px;
+
+}
+
+.section(@bg_color: #fff) {
+	width: 940px;
+	margin: auto;
+	> ul {
+		list-style-type: none;
 		li {
-			margin-bottom: 10px;
+			header {
+				padding-top: 60px;
+				h3 {
+					display: inline;
+				}
+				ul {
+					display: inline;
+					li {
+						float: right;
+						line-height: 40px;
+						margin-left: 40px;
+					}
+				}
+			}
+			.content {
+				display: none;
+			}
 		}
+	}
+}
+
+#main {
+	#projects {
+		.section
+	}
+	#stories {
+		.section
+	}
+	#games {
+		.section
+	}
+	#etc {
+		.section
 	}
 }

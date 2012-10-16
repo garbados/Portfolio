@@ -1,41 +1,48 @@
 extends layout
 
-append preload
-  script
-    var helpers = {pages: !{JSON.stringify(pages)}};
+append style
+  != css("style")
 
 block content
+  - var section_order = ['projects', 'stories', 'games', 'etc']
+  nav
+    #nav
+      h1
+        a(href="#top") Max Thayer
+      ul
+        - var reverse_order = section_order.reverse()
+        - each folder in reverse_order
+          li
+            a(href="##{folder}")= folder
+        - section_order.reverse()
   header
     #header
-      a(href="#/") 
+      a(href="#")
         img(src="/images/me.jpg")
-      h1: a(href="#/") Max Thayer
-      p
-        em Do what you love, and let your works speak for you.
+      #quote
+        h2: em Do what you love
+        h4: em and let your works speak for you.
   #main
-    .projects
-      h2 Projects
-      ul
-    .stories
-      h2 Stories
-      ul
-    .games
-      h2 Games
-      ul
-    .etc
-      h2 Etc.
-      ul
-
-  #detail
-
-block templates
-  script#page-template(type="text/template")
-    h3#back: a(href="#/") ^
-    h1 <%= title %>
-    <%= content %>
-
-  script#item-template(type="text/template")
-    a(href!="<%= url %>") <%= title %>
+    - each folder in section_order
+      section(id="#{folder}")
+        ul
+          - for (var pageKey in pages[folder])
+            - var page = pages[folder][pageKey];
+            - page.url = pageKey.split('.')[0]
+            li(id="#{page.url}")
+              header
+                h3
+                  a(href="##{page.url}")= page.title
+                ul
+                  - if (page.date)
+                    li= page.date
+                  - if (page.tags)
+                    li= page.tags
+              p= page.summary
+              hr
+              .content 
+                !{page.content}
+                hr
 
 append scripts
   != js("build.js")
